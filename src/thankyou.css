@@ -1,0 +1,36 @@
+body {
+    /* שימוש ב-Flexbox למרכוז אנכי ואופקי של כל העמוד */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh; 
+}
+
+h1 {
+    font-size: 3em;
+    color: #27ae60;
+}
+
+#img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%; /* תמונה עגולה */
+    margin: 20px 0;
+    border: 5px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 6px;
+}
+
+a:hover {
+    background-color: #2980b9;
+}

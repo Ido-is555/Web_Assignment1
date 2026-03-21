@@ -1,0 +1,41 @@
+/* איפוס הגדרות ברירת מחדל של הדפדפן */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6; /* צבע רקע אפרפר-כחלחל עדין */
+    color: #333;
+    text-align: center; /* רוב התוכן באתר ממורכז */
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #2c3e50; /* כחול כהה */
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* סגנון ברירת מחדל לתמונות - פינות מעוגלות והצללה */
+img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,59 @@
+/* תמונה קטנה עגולה במרכז */
+#img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid white;
+}
+
+#dogForm {
+    max-width: 450px;
+    margin: 30px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: left; /* יישור טקסט לשמאל בתוך הטופס */
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    text-transform: capitalize;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px; /* הרווחים ששמת ב-HTML עם <br> יתפקדו, אבל זה מרווח נוסף ובטוח */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #3498db;
+    outline: none; /* מסיר את המסגרת השחורה של הדפדפן בהקלדה */
+}
+
+#submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #2ecc71; /* ירוק שמשדר הצלחה/שליחה */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submit:hover {
+    background-color: #27ae60;
+}

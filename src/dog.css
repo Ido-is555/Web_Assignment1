@@ -1,0 +1,66 @@
+/* Updated dog.css - ללא המסגרת הצפה */
+
+table {
+    width: 100%; /* תופס את כל רוחב העמוד (מינוס הפדינג של ה-body) */
+    /* הסרנו: max-width, background, border-radius, box-shadow */
+    border-collapse: collapse; /* שומר על מבנה הטבלה מהודק */
+    margin: 0; /* צמוד לשולי העמוד */
+}
+
+th {
+    padding: 20px; /* הוספנו פדינג ישירות לתאים כדי לתת מרווח לנשימה */
+    font-weight: normal;
+    vertical-align: top;
+}
+
+/* שאר הסטיילים נשארים ללא שינוי כדי לעצב את האלמנטים הפנימיים */
+
+/* עיצוב כפתורי ניווט עליונים */
+#prev, #next {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    border-radius: 8px;
+}
+
+#prev:hover, #next:hover {
+    background-color: #bdc3c7;
+}
+
+/* תמונת הכלב הגדולה */
+#img {
+    width: 100%;
+    max-width: 400px; /* מגביל את גודל התמונה עצמה */
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+#story {
+    line-height: 1.6;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* כפתור האימוץ הראשי */
+#link {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 1.3em;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(231, 76, 60, 0.3);
+}
+
+#link:hover {
+    background-color: #c0392b;
+}
+
+#mainPage {
+    display: inline-block;
+    margin-top: 15px;
+}

@@ -12,5 +12,20 @@ async function loadData(){
     document.getElementById('dogName').textContent = dog.name;
 }
 
+// --- reacting to the form ---
+async function handleForm(){
+    const dogForm = document.getElementById('dogForm');
+
+    dogForm.addEventListener('submit', function(e){
+        e.preventDefault(); // ---> preventing page refresh
+        
+        // --- sending POST to mock server ---
+
+        // --- redirecting to thankyou.html ---
+        window.location.href = `thankyou.html?id=${id}`;
+    });
+}
+
 // --- asking os to operate the functions as HTML finishes loading ---
 document.addEventListener('DOMContentLoaded', loadData);
+document.addEventListener('DOMContentLoaded', handleForm);

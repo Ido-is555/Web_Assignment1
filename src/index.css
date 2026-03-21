@@ -1,0 +1,51 @@
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+/* הגדרת רשת הגריד לכרטיסיות */
+#list-container {
+    display: grid;
+    /* ייצר עמודות ברוחב מינימלי של 250 פיקסלים. ירד שורה אוטומטית במסך צר */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto; /* מירכוז הגריד כולו למרכז המסך */
+}
+
+/* סגנון כרטיסיית כלב - בוחר כל div שה-id שלו מתחיל במילה dog */
+div[id^="dog"] {
+    background-color: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s; /* אנימציה חלקה במעבר עכבר */
+}
+
+div[id^="dog"]:hover {
+    transform: translateY(-5px); /* הקפצה קלה למעלה */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+div[id^="dog"] img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* חותך את התמונה יפה כדי שלא תמעך */
+    margin-bottom: 15px;
+}
+
+/* כפתור "מידע נוסף" */
+div[id^="dog"] a {
+    margin-top: auto; /* דוחף את הכפתור לתחתית הכרטיסייה תמיד */
+    padding: 8px 20px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+}
+
+div[id^="dog"] a:hover {
+    background-color: #2980b9;
+}
