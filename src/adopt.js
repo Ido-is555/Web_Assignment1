@@ -16,13 +16,35 @@ async function loadData(){
 async function handleForm(){
     const dogForm = document.getElementById('dogForm');
 
-    dogForm.addEventListener('submit', function(e){
+    dogForm.addEventListener('submit', async function(e){
         e.preventDefault(); // ---> preventing page refresh
         
         // --- sending POST to mock server ---
+        const formData = {
+            email: document.getElementById('email').value,
+            fullname: document.getElementById('name').value,
+            phone: document.getElementById('number').value
+        };
 
-        // --- redirecting to thankyou.html ---
-        window.location.href = `thankyou.html?id=${id}`;
+        try {
+             const response = await fetch(`https://0c0305d8-43e8-4997-b099-b944dd9f29fc.mock.pstmn.io/dogs/${id}`, {
+                method: 'POST', 
+                headers: {
+                    'Content-Type': 'application/json' // ---> notifying that it's JSON
+                },
+                body: JSON.stringify(formData) 
+            });
+
+        if (response.ok) {
+            window.location.href = `thankyou.html?id=${id}`;
+        } else {
+            console.error("ERROR 500");
+            alert("try again");
+        }
+
+    } catch (error) {
+        console.error("error:", error);
+    }
     });
 }
 
