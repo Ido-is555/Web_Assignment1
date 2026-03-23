@@ -1,6 +1,4 @@
-// --- reading the id from URL params ---
-var params = new URLSearchParams(window.location.search); 
-var id = params.get("id");
+var id = getDogIDFromURL();
 
 // --- loading and presenting data ---
 async function loadData(){

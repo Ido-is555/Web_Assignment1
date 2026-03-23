@@ -1,6 +1,4 @@
-// --- reading the id from URL params ---
-var params = new URLSearchParams(window.location.search); 
-var id = params.get("id");
+var id = getDogIDFromURL();
 
 // --- removing "Prev" or "Next" if needed ---
 if (id == "1"){
@@ -23,16 +21,8 @@ async function loadData(){
     document.getElementById('breed').textContent = dog.breed;
     document.getElementById('age').textContent = dog.age;
     document.getElementById('sex').textContent = dog.sex;
-    var house = "Yes";
-    if (dog.house_trained == "false")
-        house = "No";
-    document.getElementById('house').textContent = house;
-    var vaccine = "Yes";
-    if (dog.vaccinated == "false")
-        vaccine = "No";
-    if (dog.vaccinated == null)
-        vaccine = "Unknown";
-    document.getElementById('vaccine').textContent = vaccine;
+    document.getElementById('house').textContent = formatBoolean(dog.house_trained);
+    document.getElementById('vaccine').textContent = formatBoolean(dog.vaccinated);
     document.getElementById('story').textContent = dog.story;
     document.getElementById('link').href = `adopt.html?id=${id}`;
     var idInt = parseInt(id, 10);
