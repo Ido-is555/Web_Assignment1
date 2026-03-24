@@ -2,11 +2,11 @@ var id = getDogIDFromURL();
 
 // --- removing "Prev" or "Next" if needed ---
 if (id == "1"){
-    const prev = document.getElementById('prev');
+    const prev = document.getElementById('prev-btn');
     prev.style.display = 'none';
 }
 if (id == "6"){
-    const prev = document.getElementById('next');
+    const prev = document.getElementById('next-btn');
     prev.style.display = 'none';
 }
 
@@ -26,8 +26,25 @@ async function loadData(){
     document.getElementById('story').textContent = dog.story;
     document.getElementById('link').href = `adopt.html?id=${id}`;
     var idInt = parseInt(id, 10);
-    document.getElementById('prev').href = `dog.html?id=${idInt-1}`;
-    document.getElementById('next').href = `dog.html?id=${idInt+1}`;
+    document.getElementById('prev-btn').href = `dog.html?id=${idInt-1}`;
+    document.getElementById('next-btn').href = `dog.html?id=${idInt+1}`;
+
+    // --- Gamification: favs ---
+    
+    const imgContainer = document.getElementById('img').parentElement;
+    imgContainer.style.position = 'relative'; 
+
+    let favBtn = document.createElement('button');
+    favBtn.className = 'fav-btn';
+    
+    favBtn.textContent = favManager.isFavorite(id) ? '❤️' : '🤍';
+    
+    favBtn.onclick = function() {
+        const isNowFav = favManager.toggleFavorite(id);
+        favBtn.textContent = isNowFav ? '❤️' : '🤍';
+    };
+
+    imgContainer.appendChild(favBtn);
 }
 
 // --- asking os to operate the functions as HTML finishes loading ---

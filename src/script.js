@@ -14,3 +14,39 @@ function formatBoolean(value){
     else
         return "Unknown";
 }
+
+// --- Favorites Gamification Logic ---
+class FavoritesManager {
+    constructor() {
+        this.storageKey = 'favoriteDogs';
+    }
+
+    // --- getting all favs from local memory of the browser ---
+    getFavorites() {
+        const favs = localStorage.getItem(this.storageKey);
+        return favs ? JSON.parse(favs) : []; 
+    }
+
+    // --- adding / removing fav ---
+    toggleFavorite(id) {
+        let favs = this.getFavorites();
+        const strId = String(id); 
+        
+        if (favs.includes(strId)) {
+            favs = favs.filter(favId => favId !== strId);
+        } else {
+            favs.push(strId);
+        }
+        
+        // --- update local memory ---
+        localStorage.setItem(this.storageKey, JSON.stringify(favs));
+        return this.isFavorite(strId); // ---> return current status
+    }
+
+    // --- returs if the dog is fav ---
+    isFavorite(id) {
+        return this.getFavorites().includes(String(id));
+    }
+}
+
+const favManager = new FavoritesManager();

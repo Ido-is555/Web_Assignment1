@@ -3,17 +3,14 @@ h1 {
     margin-bottom: 40px;
 }
 
-/* הגדרת רשת הגריד לכרטיסיות */
 #list-container {
     display: grid;
-    /* ייצר עמודות ברוחב מינימלי של 250 פיקסלים. ירד שורה אוטומטית במסך צר */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 30px;
     max-width: 1000px;
-    margin: 0 auto; /* מירכוז הגריד כולו למרכז המסך */
+    margin: 0 auto; 
 }
 
-/* סגנון כרטיסיית כלב - בוחר כל div שה-id שלו מתחיל במילה dog */
 div[id^="dog"] {
     background-color: white;
     padding: 15px;
@@ -22,24 +19,23 @@ div[id^="dog"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.2s, box-shadow 0.2s; /* אנימציה חלקה במעבר עכבר */
+    transition: transform 0.2s, box-shadow 0.2s; 
 }
 
 div[id^="dog"]:hover {
-    transform: translateY(-5px); /* הקפצה קלה למעלה */
+    transform: translateY(-5px); 
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
 div[id^="dog"] img {
     width: 100%;
     height: 200px;
-    object-fit: cover; /* חותך את התמונה יפה כדי שלא תמעך */
+    object-fit: cover; 
     margin-bottom: 15px;
 }
 
-/* כפתור "מידע נוסף" */
 div[id^="dog"] a {
-    margin-top: auto; /* דוחף את הכפתור לתחתית הכרטיסייה תמיד */
+    margin-top: auto; 
     padding: 8px 20px;
     background-color: #3498db;
     color: white;
@@ -48,4 +44,24 @@ div[id^="dog"] a {
 
 div[id^="dog"] a:hover {
     background-color: #2980b9;
+}
+
+.filter-btn {
+    display: block;
+    margin: 0 auto 30px auto; 
+    padding: 12px 25px;
+    background-color: #f39c12; 
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(243, 156, 18, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.filter-btn:hover {
+    background-color: #e67e22;
+    transform: scale(1.05); 
 }

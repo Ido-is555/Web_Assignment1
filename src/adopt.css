@@ -1,4 +1,3 @@
-/* תמונה קטנה עגולה במרכז */
 #img {
     width: 150px;
     height: 150px;
@@ -15,7 +14,7 @@
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    text-align: left; /* יישור טקסט לשמאל בתוך הטופס */
+    text-align: left; 
 }
 
 label {
@@ -29,7 +28,7 @@ label {
 input {
     width: 100%;
     padding: 12px;
-    margin-bottom: 20px; /* הרווחים ששמת ב-HTML עם <br> יתפקדו, אבל זה מרווח נוסף ובטוח */
+    margin-bottom: 20px; 
     border: 1px solid #ddd;
     border-radius: 6px;
     font-size: 16px;
@@ -38,13 +37,13 @@ input {
 
 input:focus {
     border-color: #3498db;
-    outline: none; /* מסיר את המסגרת השחורה של הדפדפן בהקלדה */
+    outline: none; 
 }
 
 #submit {
     width: 100%;
     padding: 15px;
-    background-color: #2ecc71; /* ירוק שמשדר הצלחה/שליחה */
+    background-color: #2ecc71;
     color: white;
     border: none;
     border-radius: 6px;
@@ -56,4 +55,28 @@ input:focus {
 
 #submit:hover {
     background-color: #27ae60;
+}
+
+#timer-container {
+    background-color: #fff3cd; 
+    color: #856404;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 450px;
+    text-align: center;
+    border: 1px solid #ffeeba;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+#urgency-text {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #d35400; 
+}
+
+#timer-display {
+    font-size: 1.3em;
+    font-weight: bold;
+    transition: color 0.3s; 
 }
